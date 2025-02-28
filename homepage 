@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chess Arena</title>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --primary-dark: #0056b3;
+      --secondary-color: #28a745;
+      --secondary-dark: #1c7c31;
+      --danger-color: #dc3545;
+      --danger-dark: #a71d2a;
+      --yellow-color: #FFC107;
+      --yellow-dark: #FFA000;
+      --bg-overlay: rgba(0, 0, 0, 0.6);
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+      --transition-speed: 0.3s;
+    }
+    /* Global reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      font-family: "Montserrat", sans-serif;
+    }
+    body {
+      background: url("https://images.unsplash.com/photo-1604682166058-0df89d74a6e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+        no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Dark gradient overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(var(--bg-overlay), var(--bg-overlay));
+      z-index: 1;
+    }
+    /* Overlay container with improved spacing and animation */
+    .overlay {
+      position: relative;
+      z-index: 2;
+      background: var(--overlay-bg);
+      padding: 60px 50px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 520px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #f0f0f0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    /* Refined button styling */
+    .btn {
+      display: inline-block;
+      width: 240px;
+      padding: 15px;
+      margin: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 50px;
+      color: #fff;
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+    .local {
+      background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+    }
+    .ai {
+      background: linear-gradient(45deg, var(--secondary-color), var(--secondary-dark));
+    }
+    .online {
+      background: linear-gradient(45deg, var(--danger-color), var(--danger-dark));
+    }
+    .yellow {
+      background: linear-gradient(45deg, var(--yellow-color), var(--yellow-dark));
+    }
+    /* Responsive styling */
+    @media (max-width: 480px) {
+      h1 { font-size: 2.5rem; }
+      p { font-size: 1rem; }
+      .btn { width: 200px; font-size: 1rem; padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Chess Arena</h1>
+    <p>Choose your battle mode and start your game!</p>
+    <a href="real.html" class="btn local">Local Multiplayer</a>
+    <a href="supercomputer.html" class="btn ai">Play with Computer</a>
+    <a href="Invitation 2.html" class="btn online">Challenge a Friend</a>
+    <br>
+    <a href="online2.html" class="btn yellow">Play Online</a>
+  </div>
+</body>
+</html>
